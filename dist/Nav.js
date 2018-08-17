@@ -26,6 +26,10 @@ var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -164,7 +168,8 @@ var Nav = exports.Nav = function (_Component) {
                 highlightedId = _props.highlightedId,
                 _props$onNavClick = _props.onNavClick,
                 onNavClick = _props$onNavClick === undefined ? identity : _props$onNavClick,
-                id = _props.id;
+                id = _props.id,
+                className = _props.className;
 
             var icon = findIcon(children);
             var text = findText(children);
@@ -183,7 +188,7 @@ var Nav = exports.Nav = function (_Component) {
                 null,
                 _react2.default.createElement(
                     NavItemStyled,
-                    _extends({ className: '__rsnav___item' }, itemProps),
+                    _extends({ className: (0, _classnames2.default)('__rsnav___item', className) }, itemProps),
                     _react2.default.createElement(
                         NavIconCont,
                         collectStyleAndClsName(icon),
@@ -226,7 +231,7 @@ var Nav = exports.Nav = function (_Component) {
                         return _react2.default.createElement(
                             NavItemStyled,
                             _extends({
-                                className: '__rsnav___itemchild',
+                                className: (0, _classnames2.default)('__rsnav___itemchild', child.props.className),
                                 key: idx
                             }, itemProps, {
                                 onClick: function onClick() {

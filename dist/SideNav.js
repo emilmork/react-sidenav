@@ -17,6 +17,10 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var _Nav = require('./Nav');
 
 var _Nav2 = _interopRequireDefault(_Nav);
@@ -85,11 +89,13 @@ var SideNav = exports.SideNav = function (_Component) {
         value: function render() {
             var _this2 = this;
 
-            var children = this.props.children;
+            var _props2 = this.props,
+                children = _props2.children,
+                className = _props2.className;
 
             return _react2.default.createElement(
                 'div',
-                null,
+                { className: (0, _classnames2.default)(className) },
                 _react.Children.toArray(children).map(function (child) {
                     if (child && child.type === _Nav2.default) {
                         var currentSelected = _this2.state.defaultSelected ? _this2.state.selected : _this2.props.selected;
